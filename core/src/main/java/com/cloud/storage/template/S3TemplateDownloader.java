@@ -197,7 +197,7 @@ public class S3TemplateDownloader extends ManagedContextRunnable implements Temp
                 // Record the amount of bytes transferred.
                 totalBytes += progressEvent.getBytesTransferred();
 
-                LOGGER.trace("Template download from " + downloadUrl + " to S3 bucket " + s3TO.getBucketName() + " transferred  " + totalBytes + " in " + ((new Date().getTime() - start.getTime()) / 1000) + " seconds");
+                LOGGER.trace("Template download from " + downloadUrl + " to S3 bucket " + s3TO.getBucketName() + " transferred  " + totalBytes + " in " + ((System.currentTimeMillis() - start.getTime()) / 1000) + " seconds");
 
                 if (progressEvent.getEventType() == ProgressEventType.TRANSFER_STARTED_EVENT) {
                     status = Status.IN_PROGRESS;
