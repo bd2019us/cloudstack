@@ -1078,8 +1078,8 @@ public class ApiServer extends ManagerBase implements HttpRequestHandler, ApiSer
                 final TimeZone t = TimeZone.getTimeZone(timezone);
                 s_logger.info("Current user logged in under " + timezone + " timezone");
 
-                final java.util.Date date = new java.util.Date();
-                final long longDate = date.getTime();
+                
+                final long longDate = System.currentTimeMillis();
                 final float offsetInMs = (t.getOffset(longDate));
                 offsetInHrs = offsetInMs / (1000 * 60 * 60);
                 s_logger.info("Timezone offset from UTC is: " + offsetInHrs);
